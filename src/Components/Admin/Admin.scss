@@ -1,0 +1,20 @@
+.admin-container {
+    display: flex;
+
+    .admin-sidebar {
+        .pro-sidebar {
+            height: 100vh !important;
+        }
+    }
+
+    .admin-fabars {
+        font-size: 20px;
+        padding: 0 10px;
+        cursor: pointer;
+    }
+
+    .sidebarHeader-title {
+        display: flex;
+        align-items: center;
+    }
+}

@@ -1,0 +1,39 @@
+.app-container {
+    .header-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0) !important;
+    }
+
+    .navbar {
+        padding: 15px 0;
+    }
+
+    .button {
+        text-transform: capitalize;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .btn-login {
+        padding: 0 16px;
+        margin-right: 16px;
+        border: 1px solid #535353;
+        border-radius: 4px;
+        background-color: transparent;
+
+    }
+
+    .btn-signup {
+        padding: 8px 16px;
+        background-color: #262627;
+        color: white;
+        border-radius: 5px;
+        transition: all .1s linear;
+    }
+}
