@@ -1,0 +1,112 @@
+.login {
+
+    .login-signupLink {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 8px 24px;
+
+        button {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            font-size: 15px;
+            margin-left: 5px;
+        }
+    }
+
+    .login-heading {
+        margin-bottom: 40px;
+        text-align: center;
+
+    }
+
+    .login-welcome {
+        font-size: 25px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .login-content {
+        width: 350px;
+        margin: 0 auto;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        input {
+            padding: 5px 10px;
+        }
+
+    }
+
+    .icon-eyes {
+        position: absolute;
+        right: 13px;
+        top: 53px;
+        cursor: pointer;
+    }
+
+    .login-forgot {
+        font-size: 14px;
+        color: rgb(183, 183, 183);
+        text-decoration: underline;
+        font-style: italic;
+    }
+
+    // button:disabled {
+    //     background-color: #ddd;
+    //     color: #afafaf;
+    //     cursor: no-drop;
+
+    // }
+
+    .btn-login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: black;
+        margin-top: 15px;
+        color: white;
+
+        &:disabled {
+            background-color: #ddd;
+            color: #afafaf;
+            cursor: no-drop;
+        }
+
+
+        .loader-icon {
+            margin-right: 7px;
+            top: 2px;
+            animation: spin 1s infinite linear;
+        }
+
+        @keyframes spin {
+            from {
+                transform: scale(1) rotate(0deg);
+            }
+
+            to {
+                transform: scale(1) rotate(360deg);
+            }
+        }
+    }
+
+    .back {
+        display: inline-block;
+        margin-top: 15px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+
+}

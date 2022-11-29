@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { FcPlus } from "react-icons/fc";
@@ -6,7 +7,7 @@ import { toast } from "react-toastify";
 import { postNewUser } from "../../services/apiServices";
 
 const ModalCreateUser = (props) => {
-  const { show, setShow, getAllUsers } = props;
+  const { show, setShow, fetchUserPaginate, setCurentPage } = props;
 
   const handleClose = () => {
     setShow(false);
@@ -17,7 +18,7 @@ const ModalCreateUser = (props) => {
     setImage("");
     setPreviewImg("");
   };
-  const handleShow = () => setShow(true);
+  // const handleShow = () => setShow(true);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -66,7 +67,8 @@ const ModalCreateUser = (props) => {
     if (data?.EC === 0) {
       toast.success(data.EM);
       handleClose();
-      await getAllUsers();
+      setCurentPage(1);
+      await fetchUserPaginate(1);
     }
     if (data?.EC !== 0) {
       toast.error(data.EM);

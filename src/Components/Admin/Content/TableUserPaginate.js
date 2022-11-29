@@ -1,12 +1,22 @@
 import React from "react";
+import ReactPaginate from "react-paginate";
 
-const TableUser = (props) => {
+const TableUserPaginate = (props) => {
   const {
     users,
     handleShowModalUpdateUser,
     handleShowModalViewUser,
     handleShowModalDeleteUser,
+    fetchUserPaginate,
+    pageCount,
+    currentPage,
+    setCurentPage,
   } = props;
+
+  const handlePageClick = async (event) => {
+    await fetchUserPaginate(+event.selected + 1);
+    setCurentPage(+event.selected + 1);
+  };
 
   return (
     <div>
@@ -53,8 +63,31 @@ const TableUser = (props) => {
             ))}
         </tbody>
       </table>
+      <div className="d-flex justify-content-center">
+        <ReactPaginate
+          nextLabel="Next >"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={3}
+          marginPagesDisplayed={2}
+          pageCount={pageCount}
+          previousLabel="< Prev"
+          pageClassName="page-item"
+          pageLinkClassName="page-link"
+          previousClassName="page-item"
+          previousLinkClassName="page-link"
+          nextClassName="page-item"
+          nextLinkClassName="page-link"
+          breakLabel="..."
+          breakClassName="page-item"
+          breakLinkClassName="page-link"
+          containerClassName="pagination"
+          activeClassName="active"
+          renderOnZeroPageCount={null}
+          forcePage={currentPage - 1}
+        />
+      </div>
     </div>
   );
 };
 
-export default TableUser;
+export default TableUserPaginate;
