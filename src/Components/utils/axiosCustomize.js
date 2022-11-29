@@ -1,5 +1,5 @@
 import axios from "axios";
-// import { NProgress } from "nprogress";
+import { NProgress } from "nprogress";
 
 const instance = axios.create({
   baseURL: "http://localhost:8081/",
@@ -7,7 +7,7 @@ const instance = axios.create({
 
 axios.interceptors.request.use(
   function (config) {
-    // NProgress.start();
+    NProgress.start();
     return config;
   },
   function (error) {
@@ -18,7 +18,6 @@ axios.interceptors.request.use(
 
 instance.interceptors.response.use(
   function (response) {
-    // NProgress.done();
     return response.data;
   },
   function (error) {

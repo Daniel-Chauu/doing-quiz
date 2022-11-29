@@ -45,7 +45,7 @@ const Register = () => {
       <div className="login-container">
         <div className="login-signupLink">
           <span>Already have an account??</span>
-          <button>Login</button>
+          <button onClick={() => navigate("/login")}>Login</button>
         </div>
         <div className="login-content">
           <h2 className="login-heading">Doing Quiz</h2>

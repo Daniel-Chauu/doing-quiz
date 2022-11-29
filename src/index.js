@@ -5,11 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import { Provider } from "react-redux";
-// import "./nprogress.css";
 import "nprogress/nprogress.css";
+import "nprogress/nprogress";
 import "./index.scss";
 import Layout from "./Layout";
-import { store, persistor } from "./Components/redux/store";
+import { persistor, store } from "./Components/redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -41,7 +41,7 @@ const Login = () => {
       <div className="login-container">
         <div className="login-signupLink">
           <span>Don't have an account yet?</span>
-          <button>Sign up</button>
+          <button onClick={() => navigate("/register")}>Sign up</button>
         </div>
         <div className="login-content">
           <h2 className="login-heading">Doing Quiz</h2>
