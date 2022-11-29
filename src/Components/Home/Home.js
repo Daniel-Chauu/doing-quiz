@@ -1,7 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import videoHomePage from "../../assets/video-homePage.mp4";
 import "./Home.scss";
 const Home = () => {
+  const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
+  const nagivate = useNavigate();
   return (
     <div className="home">
       <div className="home-video">
@@ -16,7 +20,21 @@ const Home = () => {
           one. Create a typeform instead—and make everyone happy.
         </p>
         <div>
-          <button className="home-btn-start">Get started - it's free</button>
+          {isAuthenticated ? (
+            <button
+              className="home-btn-start"
+              onClick={() => nagivate("/users")}
+            >
+              Doing Quiz Now
+            </button>
+          ) : (
+            <button
+              className="home-btn-start"
+              onClick={() => nagivate("/login")}
+            >
+              Get started - it's free
+            </button>
+          )}
         </div>
       </div>
     </div>

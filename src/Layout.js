@@ -9,14 +9,14 @@ import ManageUser from "./Components/Admin/Content/ManageUser";
 import Login from "./Components/Auth/Login";
 import Register from "./Components/Auth/Register";
 import Home from "./Components/Home/Home";
-import User from "./Components/User/User";
+import ListQuiz from "./Components/User/ListQuiz";
 const Layout = () => {
   return (
     <>
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
-          <Route path="/users" element={<User />} />
+          <Route path="/users" element={<ListQuiz />} />
         </Route>
         <Route path="/admins" element={<Admin />}>
           <Route index element={<DashBoard />} />

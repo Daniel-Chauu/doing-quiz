@@ -9,9 +9,7 @@ import "./Header.scss";
 const Header = () => {
   const navigate = useNavigate();
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
-  console.log("🚀 ~ isAuthenticated", isAuthenticated);
-  const accountInfor = useSelector((state) => state.user.account);
-  console.log("🚀 ~ accountInfor", accountInfor);
+  // const accountInfor = useSelector((state) => state.user.account);
 
   const handleLogin = () => {
     navigate("/login");
